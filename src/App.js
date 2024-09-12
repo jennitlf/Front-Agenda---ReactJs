@@ -4,7 +4,7 @@ import ContactList from './components/contactList.jsx';
 import ContactDetails from './components/contactDetails.jsx';
 import ContactEdit from './components/contactEdit.jsx';
 import NewContact from './components/newContact.jsx';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 
 function Home() {
@@ -22,7 +22,7 @@ function Home() {
       </div>
       <div className="New-contact">
         <p>Lista de contatos</p>
-        <Link to={`/newContact`} > <button><i className="fa-solid fa-plus"></i> Novo contato</button> </Link>
+        <Link to={"/newContact"} > <button><i className="fa-solid fa-plus"></i> Novo contato</button> </Link>
       </div>
       <ContactList searchTerm={searchTerm} />
     </div>
@@ -30,6 +30,30 @@ function Home() {
 }
 
 function App() {
+  useEffect(() => {
+
+    const apiKey = process.env.REACT_APP_GOOGLE_API_KEY;
+
+    // Cria e injeta o script do Google Maps dinamicamente
+    const script = document.createElement('script');
+    script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&libraries=places&callback=initMap`;
+    script.async = true;
+    script.defer = true;
+
+
+    document.body.appendChild(script);
+
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
+
+  window.initMap = () => {
+    console.log('Google Maps API Loaded');
+
+  };
 
   return (
     <Router>
