@@ -1,0 +1,24 @@
+.header {
+  display: flex;                                 /*os itens dentro da div sem sobrepoem, não se afastam, exceto pelo padding de cada um*/
+  width: 100%;                                   /*largura da div*/
+  height: 10%;                                   /*algura da div*/
+  background-color: #87c2c2;                   /*cor de fundo da div*/
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);  /*sombra a div que contem o texto*/
+  justify-content: center;                       /* tudo que for inserido dentro da minha div ficara centralizado dentro dela*/
+  border-top-right-radius: 1em;
+  border-top-left-radius: 1em;
+}
+
+.header-text {                                    /* configurações do titulo da agenda*/
+  color: #294746;
+  font-size: 4vw;
+  font-size: 4vh;
+  padding-top: 0.6%;
+  padding-bottom: 0.5%;
+  text-align: center;
+  margin: 0;
+  position: absolute;
+  font-family: "Dancing Script", cursive;
+  font-optical-sizing: auto;
+  font-weight: 500px;
+}

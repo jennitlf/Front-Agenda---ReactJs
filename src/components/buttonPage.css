@@ -1,0 +1,23 @@
+.button-container{
+  height: 15%;
+  display: flex;
+  justify-content: end;
+}
+.button-list{
+  width: 7%;
+  height: 60%;
+  margin-top: 2%;
+  background-color: transparent;
+  border-color: transparent;
+}
+.more{
+  margin-right: 25%;
+}
+
+.less{
+  margin-right: 2%;
+}
+
+.button-list i {
+ font-size: xx-large;
+}

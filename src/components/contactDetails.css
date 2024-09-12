@@ -1,0 +1,74 @@
+.details{
+  height: 90%;
+}
+
+.icon-name-details{
+  color: #e09a71
+}
+#name{
+  margin-top: 7%;
+  margin-left: 25%;
+  color: #294746;
+  font-size: 5vw;
+  font-size: 5vh;
+  font-family: "Playwrite US Modern", cursive;
+}
+
+.fa-phone{
+  color: rgb(47, 89, 90);
+  margin-right: 2%;
+}
+#number{
+  margin-top: 2%;
+  margin-left: 30%;
+  font-size: 2vw;
+  font-size: 2vh;
+  font-family: "Playwrite US Modern", cursive;
+}
+
+.fa-message{
+  color: rgb(47, 89, 90);
+  margin-right: 2%;
+}
+#type{
+  margin-top: 2%;
+  margin-left: 30%;
+  font-size: 2vw;
+  font-size: 2vh;
+  font-family: "Playwrite US Modern", cursive;
+}
+
+.fa-location-dot{
+  color: rgb(207, 49, 49);
+  margin-right: 2%;
+  font-size:larger;
+}
+#address{
+  width: 30%;
+  margin-top: 2%;
+  margin-left: 30%;
+  font-size: 2vw;
+  font-size: 2vh;
+  font-family: "Playwrite US Modern", cursive;
+}
+
+.controls{
+  position:fixed;
+  display: flex;
+  flex-direction: row;
+  margin-top: 5%;
+  margin-left: 38%;
+  height: 5%;
+  background-color: rgb(0, 0, 0, 0);
+}
+.controls a {
+  margin-left: 13%;
+}
+.controls button{
+  font-size:250%;
+  margin-left: 2%;
+  background-color: rgb(0, 0, 0, 0);
+  border-radius: 2em;
+  border: 0 none #000;
+  outline: 0;
+}
