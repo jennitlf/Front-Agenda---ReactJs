@@ -22,7 +22,7 @@ Para rodar este projeto localmente, siga os passos abaixo:
 
 1. **Clone o repositório**:
    \`\`\`bash
-   git clone https://github.com/seu-usuario/agenda-de-contatos-frontend.git
+   git clone https://github.com/jennitlf/Projeto-Agenda---ReactJs.git
    cd agenda-de-contatos-frontend
    \`\`\`
 
