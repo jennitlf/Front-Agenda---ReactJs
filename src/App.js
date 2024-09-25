@@ -30,30 +30,30 @@ function Home() {
 }
 
 function App() {
-  useEffect(() => {
+  // useEffect(() => {
 
-    const apiKey = process.env.REACT_APP_GOOGLE_API_KEY;
+  //   const apiKey = process.env.REACT_APP_GOOGLE_API_KEY;
 
-    // Cria e injeta o script do Google Maps dinamicamente
-    const script = document.createElement('script');
-    script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&libraries=places&callback=initMap`;
-    script.async = true;
-    script.defer = true;
-
-
-    document.body.appendChild(script);
+  //   // Cria e injeta o script do Google Maps dinamicamente
+  //   const script = document.createElement('script');
+  //   script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&libraries=places&callback=initMap`;
+  //   script.async = true;
+  //   script.defer = true;
 
 
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
+  //   document.body.appendChild(script);
 
 
-  window.initMap = () => {
-    console.log('Google Maps API Loaded');
+  //   return () => {
+  //     document.body.removeChild(script);
+  //   };
+  // }, []);
 
-  };
+
+  // window.initMap = () => {
+  //   console.log('Google Maps API Loaded');
+
+  // };
 
   return (
     <Router>
