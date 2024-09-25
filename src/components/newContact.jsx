@@ -6,7 +6,6 @@ import "./newContact.css"
 function NewContact(props) {
 
   const { id } = useParams();
-  const [editing, setEditing] = useState(false)
   const [name, setName] = useState("");
   const [type, setType] = useState("");
   const [phone, setPhone] = useState("");
@@ -22,15 +21,15 @@ function NewContact(props) {
         throw new Error('Erro ao carregar dados do contato');
       }
       const data = await response.json();
-      console.log(data)
+
       setName(data.name);
-      //document.getElementById("nameInput").value = name
+
       setType(data.type);
-      //document.getElementById("typeInput").value = type
+
       setPhone(data.number);
-      //document.getElementById("phone").value = phone
+
       setAddress(data.address);
-      // document.getElementById("addressInput").value = address
+
       setInitialPosition({ lat: parseFloat(data.latitude), lng: parseFloat(data.longitude) });
 
     } catch (error) {
@@ -41,10 +40,10 @@ function NewContact(props) {
   useEffect(  () => {
     if (id) {
       getData();
-      setEditing(true);
     }
-
    }, [])
+
+
 
 
 //=============================form submission================================
@@ -59,6 +58,8 @@ function NewContact(props) {
         latitude: addressFull.lat.toString(),
         longitude: addressFull.lng.toString(),
       }
+
+      console.log(addressFull, "oi", form)
 
       try {
         const response = await fetch(id ? `http://localhost:3010/contacts/${id}`:'http://localhost:3010/contacts', {
@@ -95,14 +96,14 @@ function NewContact(props) {
         <label htmlFor="phone" >Número</label>
         <input className="form-input" type="number" name="phone" id="phone" value={phone} maxLength={14} onChange={(e)=> setPhone(e.target.value)} />
         <label htmlFor="address">Endereço</label>
-        <input className="form-input" id="addressInput" type="text" value={address} name="address" placeholder="Selecione movendo o marcador no mapa" onChange={(e)=> setAddress(e.target.value)} disabled />
+        <input className="form-input" id="addressInput" type="text" value={id ? address: addressFull.address} name="address" placeholder="Selecione movendo o marcador no mapa" onChange={(e)=> setAddress(e.target.value)} disabled />
         <div className="controls-create">
           <Link to={`/`}><button className="return"><i className="fa-solid fa-arrow-left"></i></button></Link>
           <button className="save" type="submit" onClick={save}><i className="fa-solid fa-cloud"></i></button>
         </div>
       </form>
       <div className="maps">
-        <Map onAddress={setAddressFull} initialPosition={initialPosition}/>
+        <Map onAddress={setAddressFull} initialPosition={initialPosition} setInitialPosition={setInitialPosition}/>
       </div>
     </div>
   );
